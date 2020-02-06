@@ -56,7 +56,7 @@ def get_output_image(path):
     img_org =  cv2.imread(path)
 
     ret,thresh = cv2.threshold(img,127,255,0)
-    im2,contours,hierarchy = cv2.findContours(thresh, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
+    contours,hierarchy = cv2.findContours(thresh, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
 
     for j,cnt in enumerate(contours):
         epsilon = 0.01*cv2.arcLength(cnt,True)
